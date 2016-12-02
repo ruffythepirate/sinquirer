@@ -1,6 +1,8 @@
 package inquirer.screen.impl
 
-class ConsoleOutput {
+import inquirer.screen.Output
+
+class ConsoleOutput extends Output {
 
   def render(text: String) = {
     println(text)
