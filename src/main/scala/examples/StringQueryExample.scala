@@ -1,15 +1,10 @@
+package examples
+
 import inquirer.{Inquirer, StringQuestion}
 import inquirer.input.Input
-import inquirer.input.impl.ConsoleInput
 import inquirer.screen.Output
-import inquirer.screen.impl.ConsoleOutput
 
-object Main extends App {
-
-  Example.run(new ConsoleInput, new ConsoleOutput() )
-}
-
-object Example {
+object StringQueryExample {
 
   def run(input: Input, output: Output): Unit = {
 
@@ -19,7 +14,4 @@ object Example {
       StringQuestion("Why not?")
     )
   }
-
 }
-
-
