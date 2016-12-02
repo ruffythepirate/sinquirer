@@ -1,0 +1,1 @@
+[![Coverage Status](https://coveralls.io/repos/github/ruffythepirate/sinquirer/badge.svg?branch=master)](https://coveralls.io/github/ruffythepirate/sinquirer?branch=master)
