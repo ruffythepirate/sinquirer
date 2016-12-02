@@ -8,6 +8,7 @@ scalaVersion := "2.11.7"
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 libraryDependencies += "org.mockito" % "mockito-core" % "2.2.22" % "test"
 
+
 // Uncomment to use Akka
 //libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
 
