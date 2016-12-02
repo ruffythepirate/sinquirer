@@ -1,7 +1,8 @@
 package examples
 
-import inquirer.{Inquirer, StringQuestion}
+import inquirer.Inquirer
 import inquirer.input.Input
+import inquirer.questions.StringQuestion
 import inquirer.screen.Output
 
 object StringQueryExample {

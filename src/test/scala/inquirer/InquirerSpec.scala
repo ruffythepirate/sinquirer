@@ -1,6 +1,7 @@
 package inquirer
 
 import inquirer.input.Input
+import inquirer.questions.{Question, StringQuestion}
 import inquirer.screen.Output
 import org.scalatest.mock.MockitoSugar
 import org.scalatest.{BeforeAndAfter, Matchers, WordSpec}
@@ -25,7 +26,7 @@ class InquirerSpec extends WordSpec with Matchers with BeforeAndAfter with Mocki
   }
 
 
-  "Inquirer" should {
+  "Inquirer.prompt" should {
 
     "render a question" in {
       cut.prompt(stringQuestion)
@@ -47,5 +48,19 @@ class InquirerSpec extends WordSpec with Matchers with BeforeAndAfter with Mocki
       assert(answer.size === 1)
     }
 
+    "ask again" when {
+      "validation fails" in {
+        when(input.readString).thenReturn("string")
+
+        val question = mock[StringQuestion]
+        when(question.validate(any())).thenReturn(false).thenReturn(true)
+
+
+        val answer = cut.prompt(question)
+        verify(input, times(2)).readString
+
+      }
+    }
   }
+
 }

@@ -1,6 +1,7 @@
 package inquirer
 
 import inquirer.input.Input
+import inquirer.questions.Question
 import screen.Output
 
 import scala.collection.mutable
@@ -13,10 +14,16 @@ class Inquirer(input: Input, output: Output) {
     val answers = mutable.ArrayBuffer[Answer]()
 
     for(q <- questions) {
-      output.render(q.text)
 
-      val answer = input.readString()
-      answers.append(Answer(answer))
+      var answer: Answer = null
+
+      do {
+        output.render(q.text)
+
+        answer = Answer(input.readString())
+      } while(! q.validate(answer))
+
+      answers.append(answer)
     }
 
     answers.toSeq

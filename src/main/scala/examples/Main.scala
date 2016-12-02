@@ -4,7 +4,7 @@ import inquirer.input.Input
 import inquirer.input.impl.ConsoleInput
 import inquirer.screen.Output
 import inquirer.screen.impl.ConsoleOutput
-import inquirer.{Inquirer, StringQuestion}
+import inquirer.Inquirer
 
 object Main extends App {
 
