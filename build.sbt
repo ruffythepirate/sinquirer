@@ -1,3 +1,7 @@
+import org.scoverage.coveralls.Imports.CoverallsKeys._
+
+import java.io.File
+
 name := """sinquirer"""
 
 version := "1.0"
@@ -10,6 +14,7 @@ libraryDependencies += "org.mockito" % "mockito-core" % "2.2.22" % "test"
 
 coverageEnabled := true
 
-// Uncomment to use Akka
-//libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
-
+coverallsToken := {
+  val token = IO.read(new File("project/coverall/coverallToken.txt"))
+  Some(token)
+}
